@@ -1,0 +1,90 @@
+
+@font-face {
+    font-family: Pipboy;
+    src: url("../font/monofonto.ttf");
+}
+
+/*font and body color*/
+body{
+    font-family: Pipboy, sans-serif;
+    color: #14fe17;
+    background: #272b23;
+}
+
+body::after {
+    height: 100%;
+    width: 100%;
+    content: "";
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background: repeating-linear-gradient(0deg, rgba(0,0,0,.5), rgba(0,0,0,.4) 1px, transparent 1px, transparent 2px);
+    opacity: .3;
+    z-index: 1000000;
+    pointer-events: none;
+}
+
+/*navbar line*/
+.navbar {
+    border-bottom: 2px solid;
+    margin: 0px 10px;
+}
+
+/*little lines on the navbar edges*/
+.navbar::before, .navbar::after {
+    height: 7px;
+    width: 2px;
+    content: "";
+    position: absolute;
+    display: block;
+    z-index: 5000;
+    background: #14fe17;
+    bottom: -8px;
+}
+
+.navbar::before {
+    left: 0px;
+}
+
+.navbar::after {
+    right: 0px;
+}
+
+/*color for submenu text*/
+ul > li.nav-item > a.nav-link, ul.navbar-nav > li.navbar-item.active > a.nav-link {
+    color: #14fe17; !important;
+
+}
+
+.navbar-light .navbar-nav > li.navbar-item > .nav-link,
+.navbar-light .navbar-nav > li.navbar-item > .nav-link.active{
+    text-align: center;
+    width: 50%;
+    margin: auto;
+}
+
+.navbar-nav {
+    width: 100%;
+}
+
+.navbar-light ul.navbar-nav > li{
+    display: block;
+    position: relative;
+    width: 100%;
+}
+
+.center-image img {
+    margin: auto;
+    display: block;
+    position: relative;
+    max-height: 300px;
+    margin-top: 100px;
+    filter: grayscale(1) sepia(100%) hue-rotate(55deg) saturate(7) contrast(2);
+}
+
+.pip-footer {
+    position: fixed;
+    bottom: 0;
+    width: calc(100% - 20px);
+    margin: 10px;
+}
